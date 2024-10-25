@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "presentation.html#our-table-tennis-robot",
+    "href": "presentation.html#our-table-tennis-robot",
+    "title": "",
+    "section": "Our table tennis robot",
+    "text": "Our table tennis robot\nWhere it started (frame-based)"
+  },
+  {
+    "objectID": "presentation.html#our-table-tennis-robot-1",
+    "href": "presentation.html#our-table-tennis-robot-1",
+    "title": "",
+    "section": "Our table tennis robot",
+    "text": "Our table tennis robot\nWhere it started (frame-based)\n\n\n\nTable tennis robot"
+  },
+  {
+    "objectID": "presentation.html#our-table-tennis-robot-2",
+    "href": "presentation.html#our-table-tennis-robot-2",
+    "title": "",
+    "section": "Our table tennis robot",
+    "text": "Our table tennis robot\nHow it continued\n\nSony AI was interested in the application\nA good use case to evaluate event-based vision\n\nFast processing time (\\(1\\)s - \\(0.1\\)s) is crucial"
+  },
+  {
+    "objectID": "presentation.html#our-table-tennis-robot-3",
+    "href": "presentation.html#our-table-tennis-robot-3",
+    "title": "",
+    "section": "Our table tennis robot",
+    "text": "Our table tennis robot\nThe setup\n\n\n\n\n\nThe Kuka robot\n\n\n\n\n\n\nThe camera placement. 4x FB cameras, 2x EB cameras and one EB/FB camera pair for the spin."
+  },
+  {
+    "objectID": "presentation.html#my-research",
+    "href": "presentation.html#my-research",
+    "title": "",
+    "section": "My research",
+    "text": "My research\n\nTable tennis vision tasks [CoRLW, Ziegler, 2023]\n\nBall detection (wip)\nSpin estimation [CVPRW, Gossard, 2024], (wip)\n\nNeuromorphic [arXiv, Ziegler, 2024]\nEvent-based vision:\n\nCamera simulator [ICRA, Ziegler, 2023]\nCamera calibration [ICRA, Gossard, 2024]\nAutomatic bias tuning (wip)"
+  },
+  {
+    "objectID": "presentation.html#todays-talk",
+    "href": "presentation.html#todays-talk",
+    "title": "",
+    "section": "Today’s talk",
+    "text": "Today’s talk"
+  },
+  {
+    "objectID": "presentation.html#fast-moving-object-detection-with-neuromorphic-hardware",
+    "href": "presentation.html#fast-moving-object-detection-with-neuromorphic-hardware",
+    "title": "",
+    "section": "Fast-Moving Object Detection with Neuromorphic Hardware",
+    "text": "Fast-Moving Object Detection with Neuromorphic Hardware\nAndreas Ziegler\\(^1\\), Karl Vetter\\(^1\\), Thomas Gossard\\(^1\\), Sebastian Otte\\(^2\\), and Andreas Zell\\(^1\\)\n\\(^1\\) University of Tübingen, \\(^2\\) University of Lübeck\n\nPre-print, Submitted to ICRA 2025\n\n\nhttps://cogsys-tuebingen.github.io/snn-edge-benchmark/"
+  },
+  {
+    "objectID": "presentation.html#do-you-see-the-difference",
+    "href": "presentation.html#do-you-see-the-difference",
+    "title": "",
+    "section": "Do you see the difference?",
+    "text": "Do you see the difference?\n\n\nVisual Cortex:\n\n\n\nFigure taken from www.perkins.org/the-visual-pathway-from-the-eye-to-the-brain/\n\n\n\n\nPower consumption: 2-3 Watt\nPerformance: \\(10^{16}\\) FLOPS\n\n\n\nNeural Networks:\n\n\n\nFigure taken from www.geeksforgeeks.org/artificial-neural-networks-and-its-applications/\n\n\n\n\nPower consumption: 200-300 Watt\nPerformance: \\(10^{12}\\) FLOPS"
+  },
+  {
+    "objectID": "presentation.html#neuromorphic-computing",
+    "href": "presentation.html#neuromorphic-computing",
+    "title": "",
+    "section": "Neuromorphic Computing",
+    "text": "Neuromorphic Computing\nThe next generation of Neural Networks\n\n\nSpiking Neural Networks:\n\n\n\nTaken from [Guo, FNINS 2019]\n\n\n\nEvent-Based Cameras:\n\n\n\nTaken from [Kim, ECCV 2016]"
+  },
+  {
+    "objectID": "presentation.html#neuromorphic-computing-1",
+    "href": "presentation.html#neuromorphic-computing-1",
+    "title": "",
+    "section": "Neuromorphic Computing",
+    "text": "Neuromorphic Computing\nWhat \\(&gt;90\\%\\) of research is doing"
+  },
+  {
+    "objectID": "presentation.html#neuromorphic-computing-2",
+    "href": "presentation.html#neuromorphic-computing-2",
+    "title": "",
+    "section": "Neuromorphic Computing",
+    "text": "Neuromorphic Computing\nWhat \\(&gt;90\\%\\) of research is doing\n\nBut this is really inefficient"
+  },
+  {
+    "objectID": "presentation.html#neuromorphic-computing-3",
+    "href": "presentation.html#neuromorphic-computing-3",
+    "title": "",
+    "section": "Neuromorphic Computing",
+    "text": "Neuromorphic Computing\nfor Robotics\n\n\n\n\n\n\n\n\n\nIntel Loihi 2\n\n\n\n\n\n\n\nSynSense DynapCNN\n\n\n\n\n\n\n\nBrainChip Akida\n\n\n\n\n\n\n\n\n\nSpiNNaker\n\n\n\n\n\n\n\nIBM TrueNorth"
+  },
+  {
+    "objectID": "presentation.html#nice-but-what-about-the-specs",
+    "href": "presentation.html#nice-but-what-about-the-specs",
+    "title": "",
+    "section": "Nice, but what about the specs?",
+    "text": "Nice, but what about the specs?\n\n\nDynapCNN Specs \n\nAkida Specs"
+  },
+  {
+    "objectID": "presentation.html#a-benchmark-of-nc-hardware",
+    "href": "presentation.html#a-benchmark-of-nc-hardware",
+    "title": "",
+    "section": "A Benchmark of NC Hardware",
+    "text": "A Benchmark of NC Hardware\nWe compare…\n\nthe inference time\nthe time per forward pass\nthe power consumption\n\nof the\n\n\n\nSynSense DynapCNN\nBrainChip Akida\nIntel Loihi 2\n\n\n\n\n\n\n\n\n\n\n\nSynSense DynapCNN\n\n\n\n\n\n\n\nBrainChip Akida\n\n\n\n\n\n\n\nIntel Loihi 2"
+  },
+  {
+    "objectID": "presentation.html#the-benchmark-task",
+    "href": "presentation.html#the-benchmark-task",
+    "title": "",
+    "section": "The benchmark task",
+    "text": "The benchmark task\nBall detection\n\n\n\nDetection and Ground Truth"
+  },
+  {
+    "objectID": "presentation.html#the-networks",
+    "href": "presentation.html#the-networks",
+    "title": "",
+    "section": "The networks",
+    "text": "The networks\nThree SNN frameworks, three architectures …\n\nDynapCNN (sinabs) / Akida (MetaTF) / Loihi2 (Lava)"
+  },
+  {
+    "objectID": "presentation.html#machine-learning-needs-data",
+    "href": "presentation.html#machine-learning-needs-data",
+    "title": "",
+    "section": "Machine Learning needs data",
+    "text": "Machine Learning needs data\n\n\n\n\n\nOur recording setup\n\n\n\n\nWe project 3D points from the FB pipeline into the EB camera frame\nSome more manual labeling"
+  },
+  {
+    "objectID": "presentation.html#the-benchmarking-setup",
+    "href": "presentation.html#the-benchmarking-setup",
+    "title": "",
+    "section": "The benchmarking setup",
+    "text": "The benchmarking setup"
+  },
+  {
+    "objectID": "presentation.html#the-benchmarking-results",
+    "href": "presentation.html#the-benchmarking-results",
+    "title": "",
+    "section": "The benchmarking results",
+    "text": "The benchmarking results"
+  },
+  {
+    "objectID": "presentation.html#lets-get-into-more-detail",
+    "href": "presentation.html#lets-get-into-more-detail",
+    "title": "",
+    "section": "Let’s get into more detail",
+    "text": "Let’s get into more detail\n\n\n\n\\(^*\\) Taken from specs\n\n\nNote: Hardware integration matters!"
+  },
+  {
+    "objectID": "presentation.html#now-to-the-real-robotics-part",
+    "href": "presentation.html#now-to-the-real-robotics-part",
+    "title": "",
+    "section": "Now to the (real) robotics part",
+    "text": "Now to the (real) robotics part"
+  },
+  {
+    "objectID": "presentation.html#the-whole-setup-in-action",
+    "href": "presentation.html#the-whole-setup-in-action",
+    "title": "",
+    "section": "The whole setup in action",
+    "text": "The whole setup in action"
+  },
+  {
+    "objectID": "presentation.html#conclusion",
+    "href": "presentation.html#conclusion",
+    "title": "",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nNC and SNNs are promissing for robotics\nHowever, hardware is still in its infancy\nHardware integration is key to make it usable"
+  },
+  {
+    "objectID": "presentation.html#thanks",
+    "href": "presentation.html#thanks",
+    "title": "",
+    "section": "Thanks",
+    "text": "Thanks\n\nThe organizer for the workshop and the invitation\nSony AI for funding the project\nThe Cognitive Systems Group for the infrastructure\nMy co-workers, students and colleagues:  Thomas Gossard, Jonas Tebbe, Karl Vetter, David Joseph, Emil Moldovan and Sebastian Otte"
+  },
+  {
+    "objectID": "presentation.html#lets-stay-in-touch-and-collaborate",
+    "href": "presentation.html#lets-stay-in-touch-and-collaborate",
+    "title": "",
+    "section": "Let’s stay in touch and collaborate",
+    "text": "Let’s stay in touch and collaborate\n\n\n\n\nMy topics:\n\nReal-time object detection\nObject detection in clutter\nBall spin estimation\nAutomatic bias optimization\nEvent-based vision for tactile sensing\n\nEmail: andreas.ziegler@uni-tuebingen.de\n\n\n\n\nEvent-Based for Fast Robot Control - Andreas Ziegler"
+  }
+]

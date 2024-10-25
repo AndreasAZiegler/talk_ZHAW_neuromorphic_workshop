@@ -1,0 +1,341 @@
+---
+title: "Event-Based Vision for Fast Robot Control"
+subtitle: "When a Table Tennis Robot meets Event-Based Vision"
+author: "Andreas Ziegler"
+date: "October 22, 2024"
+institute: "You can't get enough of neuromorphic vision - Zürich Hackathon"
+university: "ZHAW"
+callout-style: simple
+format: 
+  revealjs:
+    slide-number: true
+    theme: white
+    callout-style: simple
+    css: [css/custom.css, css/callouts.css]
+    template-partials:
+      - title-slide.html
+    #logo: "imgs/UT_WBMW_Rot_4C.png"
+    footer: "Event-Based for Fast Robot Control - Andreas Ziegler"
+#editor: visual
+---
+
+## Our table tennis robot
+### Where it started (frame-based)
+
+{{< video videos/kuka.mp4 width="1000%" height="500%" >}}
+
+
+## Our table tennis robot
+### Where it started (frame-based)
+
+![Table tennis robot](imgs/robot_setup.png){ width=50% }
+
+![](imgs/fb_baseline.png){ width=60% fig-align="center" }
+
+
+## Our table tennis robot
+### How it continued
+
+* Sony AI was interested in the application
+
+* A good use case to evaluate event-based vision
+  * Fast processing time ($1$s - $0.1$s) is crucial
+
+{{< video videos/tabletennis.mp4 width="1000%" height="300%" >}}
+
+
+## Our table tennis robot
+### The setup
+
+:::: {.comumns}
+::: {.column width="50%"}
+![The Kuka robot](imgs/robot_setup.png)
+:::
+::: {.column width="50%"}
+![The camera placement. 4x [FB cameras]{style="color:blue;"}, 2x [EB cameras]{style="color:red;"} and one EB/FB camera pair for the spin.](imgs/camera_setup.png)
+:::
+::::
+
+
+## My research
+
+* Table tennis vision tasks [[CoRLW, Ziegler, 2023]]{style="font-size: 24pt;"}
+  * Ball detection [(wip)]{style="font-size: 24pt;"}
+  * Spin estimation [[CVPRW, Gossard, 2024], (wip)]{style="font-size: 24pt;"}
+* Neuromorphic [[arXiv, Ziegler, 2024]]{style="font-size: 24pt;"}
+* Event-based vision:
+  * Camera simulator [[ICRA, Ziegler, 2023]]{style="font-size: 24pt;"}
+  * Camera calibration [[ICRA, Gossard, 2024]]{style="font-size: 24pt;"}
+  * Automatic bias tuning [(wip)]{style="font-size: 24pt;"}
+
+
+## Today's talk
+
+![](imgs/research_topics.png)
+
+## Fast-Moving Object Detection with Neuromorphic Hardware {.smaller}
+
+#### Andreas Ziegler$^1$, Karl Vetter$^1$, Thomas Gossard$^1$, Sebastian Otte$^2$, and Andreas Zell$^1$
+#### $^1$ University of Tübingen, $^2$ University of Lübeck
+
+<center>
+Pre-print, Submitted to ICRA 2025
+</center>
+
+![https://cogsys-tuebingen.github.io/snn-edge-benchmark/](imgs/snn_qr_code.png){ fig-align="center" }
+
+
+## Do you see the difference?
+
+:::: {.comumns}
+
+::: {.column width="50%"}
+
+Visual Cortex:
+
+![Figure taken from www.perkins.org/the-visual-pathway-from-the-eye-to-the-brain/](imgs/the_brain_14.png)
+
+::: {style="font-size: 30%;"}
+
+- Power consumption: 2-3 Watt
+- Performance: $10^{16}$ FLOPS
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+Neural Networks:
+
+![Figure taken from www.geeksforgeeks.org/artificial-neural-networks-and-its-applications/](imgs/Neural-Networks-Architecture.png)
+
+::: {style="font-size: 30%;"}
+
+- Power consumption: 200-300 Watt
+- Performance: $10^{12}$ FLOPS
+
+:::
+
+:::
+
+::::
+
+## Neuromorphic Computing
+### The next generation of Neural Networks
+
+:::: {.comumns}
+
+::: {.column width="50%"}
+
+Spiking Neural Networks:
+
+![Taken from [Guo, FNINS 2019]](imgs/snn_crop.png)
+
+:::
+
+::: {.column width="50%"}
+
+Event-Based Cameras:
+
+![Taken from [Kim, ECCV 2016]](imgs/event_camera.png)
+
+:::
+
+::::
+
+## Neuromorphic Computing
+#### What $>90\%$ of research is doing
+
+![](imgs/snn-research.png)
+
+
+## Neuromorphic Computing
+#### What $>90\%$ of research is doing
+
+![](imgs/snn-research.png)
+
+But this is really inefficient
+
+![](imgs/stop_snn_gpu.jpg){ width=28% fig-align="center" }
+
+## Neuromorphic Computing
+### for Robotics
+
+::: {layout-ncol=3}
+
+![Intel Loihi 2](imgs/loihi-2.png){ width=50% }
+
+![SynSense DynapCNN](imgs/dynap-cnn-dev-kit.png){ width=70% }
+
+![BrainChip Akida](imgs/Brainchip_Akida.png){ width=70% }
+
+![SpiNNaker](imgs/SpiNNaker.png){ width=60% }
+
+![IBM TrueNorth](imgs/IBMs-TrueNorth.png){ width=60% }
+
+:::
+
+
+## Nice, but what about the specs?
+
+:::: {.comumns}
+
+::: {.column width="50%"}
+
+DynapCNN Specs
+![](imgs/dynap_cnn_specs.png)
+
+:::
+
+::: {.column width="50%"}
+
+Akida Specs
+![](imgs/akida_specs_mod.png)
+
+:::
+
+::::
+
+![](imgs/emoji-confused.png){ width=20% fig-align="center" }
+
+
+## A Benchmark of NC Hardware
+
+We compare...
+
+* the inference time
+* the time per forward pass
+* the power consumption
+
+of the
+
+:::: {.comumns}
+
+::: {.column width="50%" }
+
+* SynSense DynapCNN
+* BrainChip Akida
+* Intel Loihi 2
+
+:::
+::: {.column width="50%"}
+::: { layout-ncol=3 }
+
+![SynSense DynapCNN](imgs/dynap-cnn-dev-kit.png)
+
+![BrainChip Akida](imgs/Brainchip_Akida.png)
+
+![Intel Loihi 2](imgs/loihi-2.png){ width=80% }
+
+:::
+:::
+::::
+
+
+## The benchmark task
+
+Ball detection
+
+![[Detection]{style="color:green;"} and [Ground Truth]{style="color:red;"}](imgs/center_estimation_1_crop.png){ height=20% fig-align="center"  }
+
+
+## The networks
+
+Three SNN frameworks, three architectures ...
+
+![DynapCNN (sinabs) / Akida (MetaTF) / Loihi2 (Lava)](imgs/networks.png){ width=80%  fig-align="center" }
+
+
+## Machine Learning needs data
+
+:::: {.comumns}
+::: {.column width="45%"}
+
+![Our recording setup](imgs/camera_setup_wo_overhead.png)
+
+:::
+::: {.column width="45%"}
+
+* We project 3D points from the FB pipeline into the EB camera frame
+
+* Some more manual labeling
+
+:::
+::::
+
+![](imgs/dataset_specs.png)
+
+
+## The benchmarking setup
+
+![](imgs/exp_1_snn_setup.png){ height=40% fig-align="center" }
+
+
+## The benchmarking results
+
+![](imgs/benchmark_results.png){ height=40% fig-align="center" }
+
+## Let's get into more detail
+
+![$^*$ Taken from specs](imgs/benchmark_details.png){ height=40% fig-align="center" }
+
+**Note:** Hardware integration matters!
+
+
+## Now to the (real) robotics part
+
+:::: {.comumns}
+::: {.column width="50%"}
+![](imgs/robot_setup.png)
+:::
+
+::: {.column width="50%"}
+![](imgs/snn_robot_setup.png)
+:::
+::::
+
+
+## The whole setup in action
+
+{{< video videos/rally.mp4 >}}
+
+
+## Conclusion
+
+* NC and SNNs are promissing for robotics
+
+* However, hardware is still in its infancy
+
+* Hardware integration is key to make it usable
+
+
+## Thanks
+
+* The organizer for the workshop and the invitation
+
+* Sony AI for funding the project
+
+* The Cognitive Systems Group for the infrastructure
+
+* My co-workers, students and colleagues: <br/> Thomas Gossard, Jonas Tebbe, Karl Vetter, David Joseph, Emil Moldovan and Sebastian Otte
+
+
+## Let's stay in touch and collaborate
+
+:::: {.comumns}
+::: {.column width="30%"}
+![](imgs/qr_code.png)
+:::
+::: {.column width="70%"}
+My topics:
+
+* Real-time object detection
+* Object detection in clutter
+* Ball spin estimation
+* Automatic bias optimization
+* Event-based vision for tactile sensing
+
+Email: andreas.ziegler@uni-tuebingen.de
+:::
+::::
